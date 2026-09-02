@@ -29,6 +29,7 @@ android.archs = arm64-v8a, armeabi-v7a
 android.manifest.orientation = portrait
 
 p4a.local_recipes = ./p4a-recipes
+p4a.bootstrap = sdl2
 
 # Release signing (filled temporarily by scripts/build-release.sh)
 # android.keystore = %(source.dir)s/signing/gudosnake-release.keystore
