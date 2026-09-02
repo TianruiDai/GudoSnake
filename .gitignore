@@ -1,0 +1,13 @@
+.buildozer/
+bin/
+build/
+.venv-mac/
+assets/icon.icns
+assets/icon.iconset/
+__pycache__/
+*.pyc
+docker/buildozer/
+docker/gradle/
+
+signing/*.keystore
+signing/keystore.properties

@@ -1,10 +1,15 @@
 from pathlib import Path
+import sys
 import yaml
 
-current_path = Path(__file__)
-config_path = current_path.parent / 'colors.yaml'
 
-with open(config_path, encoding = 'utf-8') as f:
+def _config_path():
+    if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+        return Path(sys._MEIPASS) / "color" / "colors.yaml"
+    return Path(__file__).parent / "colors.yaml"
+
+
+with open(_config_path(), encoding="utf-8") as f:
     colors = yaml.safe_load(f)
 
 color_list = []

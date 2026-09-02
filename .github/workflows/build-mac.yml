@@ -1,0 +1,35 @@
+name: Build macOS App
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "GudoSnake-mac.spec"
+      - "scripts/build-mac.sh"
+      - "assets/**"
+      - "color/**"
+      - ".github/workflows/build-mac.yml"
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build GudoSnake.app
+        run: bash scripts/build-mac.sh
+
+      - name: Upload macOS app
+        uses: actions/upload-artifact@v4
+        with:
+          name: GudoSnake-mac
+          path: |
+            dist/GudoSnake.app
+            dist/GudoSnake-mac.zip
+          if-no-files-found: error

@@ -78,7 +78,7 @@ class option():
                     overlap = True
                     break
             if not overlap:
-                monster = (x, y)  # 只存储左上角坐标
+                monster = (x, y)  
                 break
 
     def check_wall(self,x):
