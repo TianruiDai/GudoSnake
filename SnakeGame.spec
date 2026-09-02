@@ -1,5 +1,10 @@
-# -*- mode: python ; coding: utf-8 -*-
+from pathlib import Path
 
+
+sound_datas = [
+    (str(path), str(path.parent))
+    for path in Path("sounds").rglob("*.mp3")
+]
 
 a = Analysis(
     ['demo.py'],
@@ -8,6 +13,7 @@ a = Analysis(
     datas=[
         ('color/colors.yaml', 'color'),
         ('assets/monster.jpg', 'assets'),
+        *sound_datas,
     ],
     hiddenimports=[],
     hookspath=[],

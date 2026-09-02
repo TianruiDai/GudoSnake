@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+verify_build/
+verify_dist/
