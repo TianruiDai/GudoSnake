@@ -11,3 +11,5 @@ docker/gradle/
 
 signing/*.keystore
 signing/keystore.properties
+verify_build/
+verify_dist/

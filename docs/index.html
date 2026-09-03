@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Gudo Snake, an unauthorized snake simulation with cursed random audio."
+    />
+    <title>Gudo Snake // Cursed Edition</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">UNAUTHORIZED SNAKE SIMULATION</p>
+          <h1>GUDO SNAKE <span>// CURSED EDITION</span></h1>
+        </div>
+        <div class="build-status">
+          <span class="status-dot"></span>
+          <span>GITHUB PAGES READY</span>
+        </div>
+      </header>
+
+      <div class="layout">
+        <section class="arena-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">LIVE ARENA</p>
+              <strong id="roundState">STANDBY</strong>
+            </div>
+            <span class="grid-badge">32 x 32 GRID</span>
+          </div>
+
+          <div class="canvas-shell">
+            <canvas id="gameCanvas" width="640" height="640">
+              Your browser does not support the canvas element.
+            </canvas>
+            <div class="game-overlay" id="gameOverlay">
+              <p class="overlay-kicker">PROTOCOL 04</p>
+              <h2 id="overlayTitle">GUDO IS WATCHING</h2>
+              <p id="overlayMessage">Eat the pink thing. Do not touch the face.</p>
+              <button class="primary-button" id="overlayButton" type="button">START RUN</button>
+            </div>
+          </div>
+
+          <div class="arena-footer">
+            <span><b>MOVE</b> WASD / ARROWS</span>
+            <span><b>PAUSE</b> SPACE</span>
+            <span><b>TURBO</b> SHIFT</span>
+          </div>
+        </section>
+
+        <aside class="control-panel">
+          <div class="panel-heading">
+            <span class="eyebrow">LIVE CONTROL DECK</span>
+            <span class="panel-mark">GS-04</span>
+          </div>
+
+          <section class="stat-card score-card" aria-label="Score">
+            <div class="card-accent lime"></div>
+            <p class="card-label">CURRENT SCORE</p>
+            <div class="score-line">
+              <strong id="scoreValue">000</strong>
+              <span>BEST <b id="bestValue">000</b></span>
+            </div>
+          </section>
+
+          <section class="stat-card sound-card" aria-label="Sound system">
+            <div class="card-accent pink"></div>
+            <div class="sound-heading">
+              <p class="card-label">SOUND SYSTEM</p>
+              <span class="armed-pill">ARMED</span>
+            </div>
+            <div class="sound-count">
+              <strong id="soundCount">29</strong>
+              <span>TRACKS<br />LOADED</span>
+            </div>
+            <p class="sound-note">EAT + IMPACT = RANDOM</p>
+            <label class="volume-control" for="volumeRange">
+              <span>VOLUME</span>
+              <output id="volumeValue" for="volumeRange">75%</output>
+              <input id="volumeRange" type="range" min="0" max="100" value="75" />
+            </label>
+            <p class="audio-status" id="audioStatus">CLICK START TO ARM AUDIO</p>
+          </section>
+
+          <section class="gudo-card" aria-label="Gudo status">
+            <div class="card-accent orange"></div>
+            <div class="gudo-portrait">
+              <img src="assets/monster.jpg" alt="Gudo" />
+              <span class="portrait-cross"></span>
+            </div>
+            <div class="gudo-copy">
+              <p class="card-label">TARGET ENTITY</p>
+              <h2>GUDO</h2>
+              <strong>SLOW PURSUIT</strong>
+              <span>DO NOT TOUCH</span>
+            </div>
+          </section>
+
+          <section class="controls-card" aria-label="Controls">
+            <div class="card-accent cyan"></div>
+            <p class="card-label">FIELD CONTROLS</p>
+            <div class="control-row"><b>WASD / ARROWS</b><span>MOVE</span></div>
+            <div class="control-row"><b>SPACE</b><span>PAUSE</span></div>
+            <div class="control-row"><b>R</b><span>RESTART</span></div>
+          </section>
+
+          <p class="panel-footer">RANDOM AUDIO PROTOCOL ONLINE</p>
+        </aside>
+      </div>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
