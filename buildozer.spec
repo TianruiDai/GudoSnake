@@ -5,7 +5,7 @@ package.name = gudosnake
 package.domain = org.gudosnake
 
 source.dir = .
-source.include_exts = py,png,jpg,jpeg,yaml
+source.include_exts = py,png,jpg,jpeg,yaml,mp3
 
 source.exclude_patterns = demo.py,SnakeGame.spec,build/*,.buildozer/*,bin/*,.git/*,build-android.sh,build-android.ps1,Dockerfile,signing/*.keystore,signing/keystore.properties
 
@@ -28,6 +28,7 @@ android.accept_sdk_license = True
 android.archs = arm64-v8a, armeabi-v7a
 android.manifest.orientation = portrait
 
+p4a.branch = develop
 p4a.local_recipes = ./p4a-recipes
 p4a.bootstrap = sdl2
 
