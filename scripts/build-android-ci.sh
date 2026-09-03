@@ -47,8 +47,12 @@ if [[ "$BUILD_TYPE" == "release" ]]; then
   mkdir -p signing
   echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > signing/gudosnake-release.keystore
   apply_release_signing
+  touch main.py
+  buildozer android p4a -- --help
   buildozer -v android release
 else
+  touch main.py
+  buildozer android p4a -- --help
   buildozer -v android debug
 fi
 
